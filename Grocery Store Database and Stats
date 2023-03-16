@@ -1,0 +1,22 @@
+Created the database for the grocery store
+CREATE TABLE super_store (id integer PRIMARY KEY, name TEXT, quanitity INTEGER, percent_healthy INTEGER, aisle INTEGER, price INTEGER);
+
+Added items 
+INSERT INTO super_store VALUES(1, "banana", 10, 95, 2, 4.99);
+INSERT INTO super_store VALUES (2, "apple", 12, 90, 3, 12.99);
+INSERT INTO super_store VALUES(3, "chocolate", 22, 50, 4, 5);
+INSERT INTO super_store VALUES(4, "vanilla", 23,32,22, 6);
+INSERT INTO super_store VALUES(5, "baby forumla", 23,33,22,11);
+INSERT INTO super_store VALUES (6, "people", 45,464,292,23);
+INSERT INTO super_store VALUES(7, "my life", 292,37,38,282);
+INSERT INTO super_store VALUES(8,"power", 33,585,383,454);
+INSERT INTO super_store VALUES(9,"time", 393,3939,292,2929);
+INSERT INTO super_store VALUES(10,"waffle", 239,484,48,39);
+INSERT INTO super_store VALUES(11, "egg", 383,47,28,38);
+INSERT INTO super_store VALUES(12, "buffalo wing",292,93,38,2);
+INSERT INTO super_store VALUES(13, "yogurt", 22,3,2,32);
+INSERT INTO super_store VALUES(14, "guitar",2828,38,3,4);
+INSERT INTO super_store VALUES(15,"party", 383,38,3,4);
+
+Found the percent health and grouped tghem by price
+SELECT aisle, SUM(percent_healthy) FROM super_store GROUP by price
