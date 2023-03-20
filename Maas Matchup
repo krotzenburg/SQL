@@ -1,0 +1,37 @@
+/* Create table about the people and what they do here */
+CREATE TABLE maas_universe (id INTEGER PRIMARY KEY, name TEXT, series_name TEXT);
+Multiple datasets created
+INSERT INTO maas_universe (name, series_name) VALUES ("Aelin", "TOG");
+INSERT INTO maas_universe (name, series_name) VALUES ("Feyre", "ACOTAR");
+INSERT INTO maas_universe (name, series_name) VALUES ("Rhysand", "ACOTAR");
+INSERT INTO maas_universe (name, series_name) VALUES ("Rowan", "TOG");
+INSERT INTO maas_universe (name, series_name) VALUES ("Bryce", "CC");
+INSERT INTO maas_universe (name, series_name) VALUES ("Hunter", "CC");
+INSERT INTO maas_universe (name, series_name) VALUES ("Cassian", "ACOTAR");
+INSERT INTO maas_universe (name, series_name) VALUES ("Nesta", "ACOTAR");
+
+CREATE TABLE power_threshold (id INTEGER PRIMARY KEY, character_name TEXT, power INTEGER, firstbook TEXT);
+INSERT INTO power_threshold (character_name, power,firstbook) VALUES ("Feyre", 8, "ACOTAR");
+INSERT INTO power_threshold (character_name, power,firstbook) VALUES ("Rhysand", 9.5, "ACOTAR");
+INSERT INTO power_threshold (character_name, power,firstbook) VALUES ("Aelin", 10, "TOG");
+INSERT INTO power_threshold (character_name, power,firstbook) VALUES ("Rowan", 8.5, "HOF");
+INSERT INTO power_threshold (character_name, power,firstbook) VALUES ("Bryce", 6, "CC");
+INSERT INTO power_threshold (character_name, power,firstbook) VALUES ("Hunter",7, "CC");
+INSERT INTO power_threshold (character_name, power,firstbook) VALUES ("Nesta", 9, "ACOSF");
+INSERT INTO power_threshold (character_name, power,firstbook) VALUES ("Cassian", 7, "ACOMAF");
+INSERT INTO power_threshold (character_name, power,firstbook) VALUES ("Cress", 4, "Lunar Chronciles");
+INSERT INTO power_threshold (character_name, power,firstbook) VALUES ("Cinder", 5, "Lunar Chronciles");
+
+
+SELECT * FROM maas_universe; 
+CREATE TABLE couples (id INTEGER primary key, partner1 INTEGER, partner2 INTEGER);
+INSERT INTO couples (partner1,partner2) VALUES (1,4);
+INSERT INTO couples (partner1,partner2) VALUES (2,3);
+INSERT INTO couples (partner1,partner2) VALUES (5,6);
+INSERT INTO couples (partner1,partner2) VALUES (7,8);
+show how you can match up who is dating in books
+SELECT a.name, b.name FROM couples
+JOIN maas_universe a
+ON couples.partner1=a.id
+JOIN maas_universe b
+ON couples.partner2= b.id;
